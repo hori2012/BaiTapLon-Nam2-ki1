@@ -44,3 +44,6 @@ ostream& operator << (ostream& os, Profile &pf1){
 	os<<"Diem trung binh: "<<pf1.gpa<<endl;
 	return os;
 }
+int main(){
+	
+	
