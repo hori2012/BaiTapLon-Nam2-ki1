@@ -11,7 +11,7 @@ class Profile{
 		friend ostream& operator << (ostream& os, Profile &pf1);
 		float getGpa();
 		string getName();
-		void set_Gpa() ;
+		
 };
 
 istream& operator >> (istream& is, Profile &pf1){
