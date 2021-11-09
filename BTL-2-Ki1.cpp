@@ -44,6 +44,12 @@ ostream& operator << (ostream& os, Profile &pf1){
 	os<<"Diem trung binh: "<<pf1.gpa<<endl;
 	return os;
 }
+float Profile::getGpa(){
+	return this->gpa;
+}
+string Profile::getName(){
+	return this->fullname;
+}
 
 //thêm code ở trên dòng này
 
