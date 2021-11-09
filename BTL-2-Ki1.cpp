@@ -106,4 +106,5 @@ Student_Management::~Student_Management(){
 }
 int main(){
 	
+	return 0;
 }
