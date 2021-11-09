@@ -45,6 +45,7 @@ ostream& operator << (ostream& os, Profile &pf1){
 	return os;
 }
 
+//thêm code ở trên dòng này
 
 struct Node{
 	Student data;
