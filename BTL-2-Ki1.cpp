@@ -104,6 +104,7 @@ Student_Management::~Student_Management(){
 	delete tail;
 	size=0;
 }
+// hoàn thành các hàm cua class Student_Management ở đây
 int main(){
 	
 	return 0;
