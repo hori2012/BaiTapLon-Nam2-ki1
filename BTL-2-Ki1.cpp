@@ -46,4 +46,4 @@ ostream& operator << (ostream& os, Profile &pf1){
 }
 int main(){
 	
-	
+}
