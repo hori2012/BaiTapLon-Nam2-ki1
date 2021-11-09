@@ -1,0 +1,36 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Profile{
+	private:
+		string  fullname, mssv, province, Class;
+		float gpa;
+	public:
+		friend istream& operator >> (istream& is, Profile &pf1);
+		friend ostream& operator << (ostream& os, Profile &pf1);
+		float getGpa();
+		string getName();
+		
+};
+istream& operator >> (istream& is, Profile &pf1){
+	cout<<"Nhap ho ten sinh vien: ";
+	fflush(stdin);
+	getline(is, pf1.fullname);
+	cout<<endl;
+	cout<<"Nhap ma so sinh vien: ";
+	fflush(stdin);
+	getline(is, pf1.mssv);
+	cout<<endl;
+	cout<<"Nhap lop: ";
+	fflush(stdin);
+	getline(is, pf1.Class);
+	cout<<endl;
+	cout<<"Nhap que cua sinh vien: ";
+	fflush(stdin);
+	getline(is, pf1.province);
+	cout<<endl;
+	cout<<"Nhap diem trung binh: ";
+	is>>pf1.gpa;
+	cout<<endl;
+	return is;
+}
