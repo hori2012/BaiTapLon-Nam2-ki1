@@ -44,6 +44,59 @@ ostream& operator << (ostream& os, Profile &pf1){
 	os<<"Diem trung binh: "<<pf1.gpa<<endl;
 	return os;
 }
+
+
+struct Node{
+	Student data;
+	Node *next;
+};
+
+class Student_Management{
+	private:
+		long size;
+		Node *head;
+		Node *tail;
+	public:
+		Student_Management();
+		Student_Management(long size, Node *head, Node *tail);
+		Student_Management(const Student_Management &slist);
+		~Student_Management();
+		Node* createNode(Student st);
+		void addLast(Student st);
+		Node* previous(Node *p);
+		void removeFirst();
+		void removeLast();
+		void remove(Node *p);
+		void traverse();
+		void list_student(int &n);
+		void list_sholarship();
+		void searchName();
+		void Delete();
+		void add_student();
+		void fix_infor();
+			
+};
+
+Student_Management::Student_Management(){
+	head=NULL;
+	tail=NULL;
+	size=0;
+}
+Student_Management::Student_Management(long size, Node* head, Node* tail){
+	this->size=size;
+	this->head=head;
+	this->tail=tail;
+}
+Student_Management::Student_Management(const Student_Management &slist){
+	this->size=slist.size;
+	this->head=slist.head;
+	this->tail=slist.tail;
+}
+Student_Management::~Student_Management(){
+	delete head;
+	delete tail;
+	size=0;
+}
 int main(){
 	
 }
