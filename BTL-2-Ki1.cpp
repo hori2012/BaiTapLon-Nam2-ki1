@@ -83,16 +83,16 @@ int Practise::getn_allow(){
 } 
 
 istream& operator >> (istream& is, Practise &pt1){ //ham nhap 
-	cout<<"Enter of the sum lesson: ";
+	cout<<"Nhap tong so buoi hoc (1 ki): ";
 	is>>pt1.s_lesson;
 	cout<<endl;
-	cout<<"Enter of the lesson: ";
+	cout<<"Nhap so buoi da hoc: ";
 	is>>pt1.lesson;
 	cout<<endl;
-	cout<<"Enter of the allow: ";
+	cout<<"Nhap so buoi nghi co phep: ";
 	is>>pt1.allow;
 	cout<<endl;
-	cout<<"Enter of the not allow: ";
+	cout<<"Nhap so buoi nghi khong phep: ";
 	is>>pt1.n_allow;
 	cout<<endl;
 	return is;
