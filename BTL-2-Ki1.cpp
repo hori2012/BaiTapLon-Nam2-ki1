@@ -11,6 +11,7 @@ class Profile{
 		friend ostream& operator << (ostream& os, Profile &pf1);
 		float getGpa();
 		string getName();
+		void set_Gpa() ;
 		
 };
 
@@ -50,7 +51,13 @@ float Profile::getGpa(){
 string Profile::getName(){
 	return this->fullname;
 }
-
+void Profile::set_Gpa(){
+	float temp;
+	cout<<"Nhap diem trung binh thay the: ";
+	cin>>temp;
+	cout<<endl;
+	this->gpa=temp;
+}
 //thêm code ở trên dòng này
 
 struct Node{
@@ -103,6 +110,43 @@ Student_Management::~Student_Management(){
 	delete head;
 	delete tail;
 	size=0;
+}
+Node* Student_Management::previous(Node *p) {
+	Node *t = head;
+	while (t->next != p)
+		t = t->next;
+	return t;
+}
+void Student_Management::traverse(){
+	Node *p=head;
+	fstream File;
+	File.open("List_student.txt", ios::out);
+	File<<"=====DANH SACH THONG TIN SINH VIEN======"<<endl;
+	while(p!=NULL){
+		cout<<p->data;
+		File<<p->data;
+		p=p->next;
+	}
+	File.close();
+	delete p;
+}
+void Student_Management::list_sholarship(){
+	fstream File;
+	File.open("list_scholarship.txt", ios::out);
+	File<<"======DANH SACH HOC BONG====== "<<endl;
+	cout<<"======DANH SACH HOC BONG====== "<<endl;
+	Node *p=head;
+	while(p!=NULL){
+		if(p->data.check()){
+			cout<<p->data;
+			File<<p->data;
+		}
+		else
+			cout<<"Don't student confirm scholarship !!"<<endl;
+		p=p->next;
+	}
+	File.close();
+	delete p;
 }
 // hoàn thành các hàm cua class Student_Management ở đây
 int main(){
