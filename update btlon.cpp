@@ -34,3 +34,11 @@ istream& operator >> (istream& is, Practise &pt1){ //ham nhap
 	cout<<endl;
 	return is;
 }
+ostream& operator << (ostream& os, Practise &pt1){   //ham xuat 
+	os<<"Sum lesson: "<<pt1.s_lesson<<endl;
+	os<<"Lesson: "<<pt1.lesson<<endl;
+	os<<"Allow: "<<pt1.allow<<endl;
+	os<<"Not allow: "<<pt1.n_allow<<endl;
+	os<<"Point practise: "<<pt1.getPractise()<<endl;
+	return os;
+}
