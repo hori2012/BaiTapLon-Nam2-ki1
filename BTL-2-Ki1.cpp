@@ -97,7 +97,28 @@ istream& operator >> (istream& is, Practise &pt1){ //ham nhap
 	cout<<endl;
 	return is;
 }
-
+ostream& operator << (ostream& os, Practise &pt1){
+	os<<"Tong so buoi (1 ky): "<<pt1.s_lesson<<endl;
+	os<<"So buoi hoc: "<<pt1.lesson<<endl;
+	os<<"Nghi co phep: "<<pt1.allow<<endl;
+	os<<"Nghi khong phep: "<<pt1.n_allow<<endl;
+	os<<"Diem ren luyen: "<<pt1.getPractise()<<endl;
+	return os;
+}
+float Practise::point(){
+	int cur;   
+	int pre;
+	float temp;
+	cur= allow + n_allow;
+	if(cur > (float)(s_lesson * 0.15)){   //so buoi duoc nghi khong qua 15% tong so buoi hoc
+		temp=0;							
+	}
+	else{
+		pre=lesson*5 + allow*3 - n_allow*3;  //moi buoi hoc duoc 5d , co phep duoc 3d, khong phep -3d
+		temp=(float)(pre*1.0/s_lesson);   //diem ren luyen = tong diem dat duoc / tong so buoi hoc
+	}
+	return temp;
+} 
 
 struct Node{
 	Student data;
