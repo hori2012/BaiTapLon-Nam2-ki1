@@ -68,11 +68,13 @@ class Practise:public Profile {
 	public:
 		friend istream& operator >> (istream& is , Practise &pt1);
 		friend ostream& operator << (ostream& os, Practise &pt1);
-		float point();
-		void setPractise(float x);
-		float getPractise();
-		int getallow();
-		int getn_allow(); 		 
+		float point();				//tinh diem ren luyen
+		void setPractise(float x);	//dat laij diem ren luyen
+		float getPractise();		//lay diem ren luyen
+		int get_n_Allow();			//lay so buoi nghi khong phep
+		int get_Allow();			//lay so buoi nghi co phep
+		void set_s_lesson();		//sua tong so buoi hoc (1 ki)
+		void set_All();				//sua lai tat ca thong tin
 };
 int Practise::getallow(){
 	return this->allow; 
