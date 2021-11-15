@@ -120,6 +120,9 @@ float Practise::point(){
 	}
 	return temp;
 } 
+void Practise::setPractise(float x){
+	this->practise=x;
+}
 
 struct Node{
 	Student data;
