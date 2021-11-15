@@ -11,13 +11,12 @@ class Profile{
 	public:
 		friend istream& operator >> (istream& is, Profile &pf1);
 		friend ostream& operator << (ostream& os, Profile &pf1);
-		float getGpa();
-		string getName();
-		void set_Gpa() ;
-		
+		float getGpa(); 		//lay diem trung binh
+		string getName();		//lay ten sinh vien
+		void set_Gpa() ;		//dat lai diem trung binh
 };
 
-istream& operator >> (istream& is, Profile &pf1){
+istream& operator >> (istream& is, Profile &pf1){    //nhap thong tin sinh vien
 	cout<<"Nhap ho ten sinh vien: ";
 	fflush(stdin);
 	getline(is, pf1.fullname);
@@ -39,9 +38,9 @@ istream& operator >> (istream& is, Profile &pf1){
 	cout<<endl;
 	return is;
 }
-ostream& operator << (ostream& os, Profile &pf1){
-	os<<"Ho va ten: "<<pf1.fullname<<endl;
+ostream& operator << (ostream& os, Profile &pf1){		//xuat thong tin sinh vien
 	os<<"MSSV: "<<pf1.mssv<<endl;
+	os<<"Ho va ten: "<<pf1.fullname<<endl;
 	os<<"Lop: "<<pf1.Class<<endl;
 	os<<"Que: "<<pf1.province<<endl;
 	os<<"Diem trung binh: "<<pf1.gpa<<endl;
