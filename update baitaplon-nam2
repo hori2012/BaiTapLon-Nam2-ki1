@@ -1,0 +1,28 @@
+class Student_Management{
+	private:
+		long size;//chieu dai cua danh sach lien ket 
+		Node *head;//tao nut dau danh sach 
+		Node *tail;// tao nut cuoi danh sach 
+	public:
+		Node* createNode(Student st);// Hàm tao 1  cái node 
+		void addLast(Student st);
+		Node* previous(Node *p);
+		void removeFirst();
+		void removeLast();
+		void remove(Node *p);
+		void traverse();
+		void list_student(int &n);
+		void Delete();
+		void edit (Node *p);
+			
+};
+void Student_Management::traverse(){ 
+	Node *p=head;
+	
+	cout<<"=====List Information Student======"<<endl;
+	while(p!=NULL){
+		cout<<p->data;
+		p=p->next;
+	}
+	delete p;
+}
