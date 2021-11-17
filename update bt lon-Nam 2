@@ -1,0 +1,32 @@
+class Student_Management{
+	private:
+		long size;//chieu dai cua danh sach lien ket 
+		Node *head;//tao nut dau danh sach 
+		Node *tail;// tao nut cuoi danh sach 
+	public:
+		Node* createNode(Student st);// Hàm tao 1  cái node 
+		void addLast(Student st);
+		Node* previous(Node *p);
+		void removeFirst();
+		void removeLast();
+		void remove(Node *p);
+		void traverse();
+		void list_student(int &n);
+		void Delete();
+		void edit (Node *p);
+			
+};
+void Student_Management::list_student(int &n){//them student bat ḱ 
+	Student value;
+	do{
+		cout<<"Enter the number of the students: ";
+		cin>>n;
+		cout<<endl;
+	}while(n==0);
+	
+	for(int i=0;i<n;i++){
+		cout<<"Student "<<i+1<<": "<<endl;
+		cin>>value;
+		addLast(value);
+	}
+}
