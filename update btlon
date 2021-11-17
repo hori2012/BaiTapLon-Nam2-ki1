@@ -1,0 +1,36 @@
+class Scholarship : public Practise{
+	private:
+		string namebank;
+		int numberbank;
+	public:
+		friend istream& operator >> (istream& is, Scholarship &ip1);
+		friend ostream& operator << (ostream& os, Scholarship &ip1);
+		bool check();	
+};
+istream& operator >> (istream& is, Scholarship &ip1){
+	if(ip1.check()){
+		cout<<"Confirm Scholarship !!"<<endl;
+		cout<<"Enter of the name bank: ";
+		fflush(stdin);
+		getline(is, ip1.namebank);
+		cout<<endl;
+		cout<<"Enter of the number bank: ";
+		is>>ip1.numberbank;
+		cout<<endl;
+		return is;
+	}
+	cout<<"Don't Scholarship !!"<<endl;
+	ip1.namebank="0";
+	ip1.numberbank=0;
+}
+ostream& operator << (ostream& os, Scholarship &ip1){
+		os<<"Name bank: "<<ip1.namebank<<endl;
+		os<<"Number bank: "<<ip1.numberbank<<endl;
+		return os;
+}
+bool Scholarship::check(){
+	if(getGpa() >= 7.5 && getPractise() >= 4)
+		return true;
+	else 
+		return false;	
+}
