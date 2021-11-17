@@ -124,6 +124,33 @@ void Practise::setPractise(float x){
 	this->practise=x;
 }
 
+class Student: public Scholarship{
+	public:
+		friend istream& operator >> (istream& is, Student &st1);
+		friend ostream& operator << (ostream& os, Student &st1);
+};
+
+istream& operator >> (istream& is, Student &st1){
+	Profile *pf1=static_cast<Profile *>(&st1);
+	is>>*pf1;
+	Practise *pr1=static_cast<Practise *>(&st1);
+	is>>*pr1;
+	Scholarship *sp1=static_cast<Scholarship *>(&st1);
+	is>>*sp1;
+	return is;
+}
+ostream& operator << (ostream& os, Student &st1){
+	os<<"~~~~~~~~~~~~~~~"<<endl;
+	Profile *pf1=static_cast<Profile *>(&st1);          //ep kieu 
+	os<<*pf1;
+	Practise *pr1=static_cast<Practise *>(&st1);
+	os<<*pr1;
+	Scholarship *sp1=static_cast<Scholarship *>(&st1);
+	os<<*sp1;
+	return os;
+}
+
+
 struct Node{
 	Student data;
 	Node *next;
