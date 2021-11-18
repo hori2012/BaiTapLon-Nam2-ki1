@@ -1,0 +1,64 @@
+class Student_Management{
+	private:
+		long size;
+		Node *head;
+		Node *tail;
+	public:
+		Node* createNode(Student st);
+		void addLast(Student st);
+		Node* previous(Node *p);
+		void removeFirst();
+		void removeLast();
+		void remove(Node *p);
+		void traverse();
+		void list_student(int &n);
+		void Delete();
+		void fix_infor();		
+};
+void Student_Management::fix_infor(){
+	string str;
+	cout<<"Nhap ten sinh vien can sua thong tin: ";
+	fflush(stdin);
+	getline(cin, str);
+	cout<<endl;
+	Node *p=head;
+	while(p!=NULL){
+		if(p->data.getName() == str){
+			int choice;
+			do{
+				cout<<"-------Cac noi dung sua-------"<<endl;
+				cout<<"1. Sua diem trung binh"<<endl;
+				cout<<"2. Sua tong so buoi hoc (1 ki)"<<endl;
+				cout<<"3. Sua so buoi da hoc, nghi co phep, khong phep"<<endl;
+				cout<<"4. Sua ten ngan hang"<<endl;
+				cout<<"5. Sua so tai khoan ngan hang"<<endl;
+				cout<<"Nhan phim 0 de tro lai menu chinh !!"<<endl;
+				cout<<"-------------------------------"<<endl;
+				cout<<"--->Vui long chon chuc nang: ";
+				cin>>choice;
+				cout<<endl;
+				switch(choice){
+					case 1:
+						p->data.set_Gpa();
+						break;
+					case 2:
+						p->data.set_s_lesson();
+						break;
+					case 3:
+						p->data.set_All();
+						break;
+					case 4:
+						p->data.set_Namebank();
+						break;
+					case 5:
+						p->data.set_Numberbank();
+						break;
+					default:
+						choice=0;
+						break;			
+				}
+			}while(choice != 0);
+		}
+		p=p->next;
+	}
+}
