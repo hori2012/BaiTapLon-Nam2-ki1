@@ -1,0 +1,72 @@
+//khoi tao node
+typedef struct LinkedList *node; 
+node CreateNode(int value){
+    node temp; 
+    temp = (node)malloc(sizeof(struct LinkedList)); 
+    temp–>next = NULL;
+    temp–>data = value;
+    return temp;
+}
+
+//tim kiem
+int Search(node head, int value){
+    int position = 0;
+    for(node p = head; p != NULL; p = p–>next){
+        if(p–>data == value){
+            return position;
+        }
+        ++position;
+    }
+    return –1;
+}
+//xoa dau
+node DelHead(node head){
+    if(head == NULL){
+        printf("\nCha co gi de xoa het!");
+    }else{
+        head = head->next;
+    }
+    return head;
+}
+//xoa cuoi 
+node DelTail(node head){
+    if (head == NULL || head->next == NULL){
+         return DelHead(head);
+    }
+    node p = head;
+    while(p->next->next != NULL){
+        p = p->next;
+    }
+    p->next = p->next->next; // Cho next b?ng NULL
+    // Ho?c vi?t p->next = NULL cung du?c
+    return head;
+}
+//xoa bat ki
+node DelAt(node head, int position){
+    if(position == 0 || head == NULL || head->next == NULL){
+        head = DelHead(head); 
+    }else{
+        
+        int k = 1;
+        node p = head;
+        while(p->next->next != NULL && k != position){
+            p = p->next;
+            ++k;
+        }
+ 
+        if(k != position){
+          
+        }else{
+            p->next = p->next->next;
+        }
+    }
+    return head;
+
+//lay phan tu 
+int Length(node head){
+    int length = 0;
+    for(node p = head; p != NULL; p = p->next){
+        ++length;
+    }
+    return length;
+}
